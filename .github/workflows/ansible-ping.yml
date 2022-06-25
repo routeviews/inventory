@@ -1,0 +1,33 @@
+name: Ping All
+
+# workflow_dispatch: Enables using this GH Action as an REST API/Webhook
+on: workflow_dispatch
+
+jobs:
+  ping-inventory:
+    # All self-hosted runners in Route Views GH Org are withinin RV subnet (128.223.51.0/24) 
+    # ==> So, self-hoster runners have ACL-based access to all RV inventory 
+    runs-on: self-hosted 
+    timeout-minutes: 10
+    defaults:
+      run:
+        shell: bash
+        working-directory: ansible
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      # Setup Python (faster than using Python container)
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.9"
+
+      - name: Install pinned dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run ping
+        run: |
+          ansible all -m ping
