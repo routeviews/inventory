@@ -1,0 +1,127 @@
+# -*- mode: conf -*-
+# This is a basic INI style format file
+# The plain format is basic ini.
+# vim: set ft=dosini
+#
+# role-based groups
+#
+#
+[frr]
+route-views2.saopaulo.routeviews.org 
+route-views.amsix.routeviews.org 
+route-views.chicago.routeviews.org 
+route-views.chile.routeviews.org 
+route-views.eqix.routeviews.org 
+route-views.flix.routeviews.org 
+route-views.linx.routeviews.org 
+route-views.napafrica.routeviews.org 
+route-views.sfmix.routeviews.org 
+route-views3.routeviews.org
+route-views.mwix.routeviews.org 
+route-views.rio.routeviews.org 
+route-views.fortaleza.routeviews.org 
+route-views.gixa.routeviews.org 
+route-views.phoix.routeviews.org 
+route-views.gorex.routeviews.org 
+route-views.bknix.routeviews.org 
+# Indefinitely offline as of Feb 18, 2022, duplicated below
+# route-views.spb.routeviews.org 
+route-views2.routeviews.org 
+route-views.nwax.routeviews.org 
+# Indefinitely offline as of Feb 18, 2022, duplicated below
+# route-views.decix.routeviews.org 
+route-views.perth.routeviews.org 
+route-views.isc.routeviews.org 
+route-views.bdix.routeviews.org 
+route-views.kixp.routeviews.org 
+route-views.uaeix.routeviews.org
+route-views.telxatl.routeviews.org 
+route-views4.routeviews.org ansible_python_interpreter=/usr/bin/python3
+route-views5.routeviews.org ansible_python_interpreter=/usr/bin/python3
+route-views.ny.routeviews.org ansible_python_interpreter=/usr/bin/python3
+route-views.siex.routeviews.org ansible_python_interpreter=/usr/bin/python3
+route-views.peru.routeviews.org ansible_python_interpreter=/usr/bin/python3
+route-views6.routeviews.org ansible_python_interpreter=/usr/bin/python3
+route-views7.routeviews.org ansible_python_interpreter=/usr/bin/python3
+
+[quagga]
+# Indefinitely offline as of Feb 18, 2022
+# route-views.jinx.routeviews.org 
+route-views.wide.routeviews.org 
+route-views.saopaulo.routeviews.org 
+route-views.sydney.routeviews.org 
+route-views.sg.routeviews.org 
+route-views.soxrs.routeviews.org 
+
+[lab]
+frr.routeviews.org 
+oh-lab1.routeviews.org
+cc-lab3.routeviews.org
+cc-lab4.routeviews.org
+
+[ix]
+route-views2.saopaulo.routeviews.org 
+route-views.amsix.routeviews.org 
+route-views.chicago.routeviews.org 
+route-views.chile.routeviews.org 
+route-views.eqix.routeviews.org 
+route-views.flix.routeviews.org 
+route-views.linx.routeviews.org 
+route-views.napafrica.routeviews.org 
+route-views.sfmix.routeviews.org 
+route-views.mwix.routeviews.org 
+route-views.rio.routeviews.org 
+route-views.fortaleza.routeviews.org 
+route-views.gixa.routeviews.org 
+route-views.phoix.routeviews.org 
+route-views.gorex.routeviews.org 
+route-views.bknix.routeviews.org 
+# Indefinitely offline as of Feb 18, 2022, duplicated above
+# route-views.spb.routeviews.org 
+route-views.nwax.routeviews.org 
+# Indefinitely offline as of Feb 18, 2022, duplicated above
+# route-views.decix.routeviews.org 
+route-views.perth.routeviews.org 
+route-views.isc.routeviews.org 
+route-views.bdix.routeviews.org 
+route-views.uaeix.routeviews.org
+route-views.ny.routeviews.org
+route-views.siex.routeviews.org
+route-views.peru.routeviews.org
+
+
+[collectors:children]
+frr
+quagga
+# lab
+
+[openbmpd]
+is-cc-bmp1.routeviews.org 
+is-ah-bmp1.routeviews.org 
+bmptest.routeviews.org 
+
+[kafka]
+rvkafka[01:03].routeviews.org
+
+[base]
+rvdb.routeviews.org 
+build.routeviews.org
+rvmonitor.routeviews.org 
+api.routeviews.org
+mail.routeviews.org
+archive2.routeviews.org # TODO: should this be part of rsyncd?
+
+[loadbalancers]
+cc-lb.routeviews.org 
+ah-lb.routeviews.org 
+
+[webservers]
+api.routeviews.org
+www-test.routeviews.org
+
+[rsyncd]
+archive.routeviews.org
+gatherscatter.routeviews.org
+
+[bind]
+archive.routeviews.org
