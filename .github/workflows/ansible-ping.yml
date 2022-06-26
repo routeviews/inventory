@@ -31,7 +31,7 @@ jobs:
       - name: Run ping playbook
         uses: dawidd6/action-ansible-playbook@v2
         with:
-          playbook: ping.yml
+          playbook: playbooks/ping.yml
           directory: ansible
           # SSH private key
           key: ${{secrets.ROOT_SSH_KEY_RSA}}
