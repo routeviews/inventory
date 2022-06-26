@@ -30,4 +30,4 @@ jobs:
 
       - name: Run ping
         run: |
-          ansible all -m ping
+          ansible all -m ping -u root
