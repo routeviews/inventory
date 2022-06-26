@@ -1,0 +1,5 @@
+- name: Ping ze inventory!
+  hosts: all  
+  tasks:
+    - name: Ping all inventory
+      ansible.builtin.ping:

@@ -28,6 +28,19 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Run ping
-        run: |
-          ansible all -m ping -u root
+      - name: Run ping playbook
+        uses: dawidd6/action-ansible-playbook@v2
+        with:
+          playbook: ping.yml
+          directory: ansible
+          # SSH private key
+          key: ${{secrets.ROOT_SSH_KEY_RSA}}
+          # SSH known hosts file content (Optional)
+          # known_hosts: .known_hosts
+          # encrypted vault password  (Optional)
+          # vault_password: ${{secrets.ANSIBLE_VAULT_PASS}}
+          # galaxy requirements filepath  (Optional)
+          # requirements: galaxy-requirements.yml
+          # additional flags to pass to ansible-playbook (Optional)
+          options: |
+            --user root
